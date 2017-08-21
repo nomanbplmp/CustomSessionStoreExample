@@ -28,15 +28,19 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 public class DBConfig {
 	
 	@Primary
+	@Bean("primary")
 	@ConfigurationProperties(prefix="spring.datasource")
 	  public DataSource mySqlDataSource() {
 	    return DataSourceBuilder.create().build();
 	  }
 	
+	
+	
+	
 	@Bean(name = "entityManagerFactory")
 	  public LocalContainerEntityManagerFactoryBean 
 	  entityManagerFactory(EntityManagerFactoryBuilder builder,
-	    DataSource dataSource
+	   @Qualifier("primary") DataSource dataSource
 	  ) {
 
 		HashMap<String, Object> properties = new HashMap<>();

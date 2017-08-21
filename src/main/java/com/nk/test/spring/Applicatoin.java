@@ -62,7 +62,7 @@ class HelloController {
 	   System.out.println(session.getId());
 	   itemRepository.save(new Item("item"+new Random().nextInt(100)));
 	
-	  return "session created";
+	  return "session id : "  +session.getId();
 	}
 	
 	
