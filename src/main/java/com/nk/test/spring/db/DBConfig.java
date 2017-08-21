@@ -46,7 +46,7 @@ public class DBConfig {
 		return
 	      builder
 	        .dataSource(dataSource)
-	        .packages("com.nk.test.spring.dbconfig")
+	        .packages("com.nk.test.spring.db")
 	        .persistenceUnit("item").properties(properties)
 	        .build();
 	  }
