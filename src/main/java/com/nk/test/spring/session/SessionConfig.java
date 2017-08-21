@@ -1,4 +1,4 @@
-package com.nk.test.spring.session.config;
+package com.nk.test.spring.session;
 
 import javax.sql.DataSource;
 

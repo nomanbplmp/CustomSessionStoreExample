@@ -31,8 +31,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nk.test.spring.dbconfig.Item;
-import com.nk.test.spring.dbconfig.ItemRepository;
+import com.nk.test.spring.db.Item;
+import com.nk.test.spring.db.ItemRepository;
 
 
 
@@ -47,30 +47,6 @@ public class Applicatoin {
 	  
 	
 }
-
-
-@Configuration
-@EnableJdbcHttpSession
-class Config { 
-	@Bean
-	public JdbcOperationsSessionRepository sessionRepository(){
-	  DataSource ds =	DataSourceBuilder.create().driverClassName("org.h2.Driver").username("sa").url("jdbc:h2:file:~/test").build();
-	 return	  new SessionRepo(ds,new DataSourceTransactionManager(ds));
-	 
-	}
-}
-
-
-class SessionRepo extends JdbcOperationsSessionRepository  {
-
-	public SessionRepo(DataSource dataSource, PlatformTransactionManager transactionManager) {
-		super(dataSource, transactionManager);
-		
-	}
-	
-	
-}
-
 
 
 @RestController

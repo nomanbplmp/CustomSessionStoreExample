@@ -1,4 +1,4 @@
-package com.nk.test.spring.dbconfig;
+package com.nk.test.spring.db;
 
 import java.io.Serializable;
 
